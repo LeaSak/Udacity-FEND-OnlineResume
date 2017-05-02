@@ -156,7 +156,7 @@ var projects = {
 var education = {
     "schools": [{
         "name": "University of South Australia",
-        "location": "Adelaide, Australia",
+        "location": "Remote / Adelaide, Australia",
         "degree": "Master of Management (Arts and Cultural Management)",
         "majors": ["Arts and Cultural Management"],
         "dates": "2007 - 2010",
@@ -172,13 +172,13 @@ var education = {
     "onlineCourses": [{
         "title": "Front-End Web Development Nanodegree",
         "school": "Udacity",
-        "dates": "2017",
+        "dates": "2017 - Present",
         "url": "https://www.udacity.com/"
     },
     {
         "title": "Fullstack Web Development",
         "school": "freeCodeCamp",
-        "dates": "2016",
+        "dates": "2016 - Present",
         "url": "https://www.freecodecamp.com/"
     },
     {

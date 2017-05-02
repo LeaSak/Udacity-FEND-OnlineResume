@@ -36,8 +36,8 @@ var HTMLprojectDates = '<h4 class="project-title"><span class="project-date">%da
 var HTMLprojectTitle = '%data%</h4>';
 var HTMLprojectDescription = '<p class="project-description">%data%</p>';
 var HTMLprojectImageStart = '<div class="flex-project-item"></div>';
-var HTMLprojectImage = '<img class="img-project" src="%data%" srcset="%srcsetdata%" alt="Project Image">'
-var HTMLprojectURL = '<a class="project-link" href="%data%">View Project</a>'
+var HTMLprojectImage = '<img class="img-project" src="%data%" srcset="%srcsetdata%" alt="Project Image">';
+var HTMLprojectURL = '<a class="project-link" href="%data%">View Project</a>';
 
 ////Education
 var HTMLschoolStart = '<section class="education-entry"></section>';
@@ -49,7 +49,7 @@ var HTMLschoolMajor = '<p class="border-bottom major"><span>Major: </span>%data%
 
 ////Online Classes
 var HTMLonlineClasses = '<div class="online-section"><h3 class="sub-section profile-list">Online Education</h3></div>';
-var HTMLonlineClassStart = '<section class="class"><ul class="class-list"></ul></section>'
+var HTMLonlineClassStart = '<section class="class"><ul class="class-list"></ul></section>';
 var HTMLonlineTitle = '<li>%data%</li>';
 var HTMLonlineSchool = '<li><a class="school" href="#">%data%</a></li>';
 var HTMLonlineDates = '<p class="class-date">%data%</p>';

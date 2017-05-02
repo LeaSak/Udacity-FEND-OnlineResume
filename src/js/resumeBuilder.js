@@ -42,7 +42,7 @@ var bio = {
         }
 
     }
-}
+};
 
 var work = {
     "jobs": [{
@@ -91,7 +91,7 @@ var work = {
         });
     }
 
-}
+};
 
 var projects = {
     "projects": [{
@@ -151,7 +151,7 @@ var projects = {
         });
     }
 
-}
+};
 
 var education = {
     "schools": [{
@@ -219,7 +219,7 @@ var education = {
             $(".class:last").prepend(formattedOnlineDates);
         });
     }
-}
+};
 
 //map
 $('#mapDiv').append(googleMap);

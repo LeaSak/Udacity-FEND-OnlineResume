@@ -1,0 +1,49 @@
+/*Bio*/
+
+.bio-pic {
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/*Project*/
+
+.img-project {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*Education*/
+
+.sub-section {
+    text-transform: uppercase;
+    padding-top: 30px;
+}
+
+.class-date {
+    margin-bottom: 0;
+    color: #B0BEC5;
+}
+
+
+/*Map*/
+
+#map-section {
+    margin-bottom: 0;
+}
+
+#map {
+    display: block;
+    height: 100%;
+}
+
+#mapDiv {
+    height: 350px;
+    padding: 10% 15px;
+    @media (min-width: $screen-sm-min) {
+        padding: 5% 15px;
+    }
+}

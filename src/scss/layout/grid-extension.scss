@@ -1,0 +1,91 @@
+/*Layout*/
+
+//rename bootstrap classes, add vertical height;
+.resume-section {
+    @include make-row();
+    @media (min-width: $screen-sm-min) {
+        margin-bottom: 70px;
+    }
+}
+
+.portrait-section {
+    @include make-sm-column(4);
+    @include make-md-column(4);
+}
+
+header {
+    @include make-sm-column(8);
+    @include make-md-column(8);
+}
+
+.profile-section {
+    @include make-sm-column(6);
+    @include make-md-column(4);
+    @include make-md-column-offset(4);
+}
+
+.skill-section {
+    @include make-sm-column(6);
+    @include make-md-column(4);
+}
+
+.left-column {
+    @include make-md-column(4);
+}
+
+.right-column {
+    @include make-md-column(8);
+}
+
+//nested columns
+.work-section {
+    @include make-row();
+}
+
+.work-entry {
+    @include make-sm-column(12);
+    margin-bottom: 30px;
+}
+
+.flex-project {
+    @include make-row();
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.flex-project-item-lg {
+    @include make-sm-column(12);
+    margin-bottom: 16px;
+    @media (min-width: $screen-sm-min) {
+        min-width: 100%;
+    }
+}
+
+.flex-project-item {
+    @include make-sm-column(6);
+    margin-bottom: 16px;
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 50%;
+    }
+}
+
+.education-section {
+    @include make-row();
+    margin-bottom: 30px;
+}
+
+.education-entry,
+.online-section {
+    @include make-sm-column(12);
+    margin-bottom: 30px;
+}
+
+.class {
+    @include make-sm-column(12);
+}

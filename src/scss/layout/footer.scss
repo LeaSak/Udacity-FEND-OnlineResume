@@ -1,0 +1,12 @@
+/*Footer*/
+
+.footer-container {
+    padding: 5%;
+    @media (min-width: $screen-sm-min) {
+        padding: 2.5% 5%;
+    }
+}
+
+footer .contact {
+    margin: 0;
+}

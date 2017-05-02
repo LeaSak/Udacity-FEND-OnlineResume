@@ -1,0 +1,58 @@
+/* Custom variables */
+
+//Original bootstrap variables are commented out.
+//colors
+$white: #fff;
+$cloudgrey: #f1f3f4;
+$platinum: #e3e8e9;
+$silversand: #b5cdc5;
+$japaneseindigo: #2a384a;
+$frenchskyblue: #7aabf9;
+$sandyellow: #e8c053;
+$pastelgrey: #bababf;
+//Scaffolding
+//$body-bg:               #fff !default;
+$body-bg: $platinum;
+//Typography
+$font-family-sans-serif: "Work Sans", Helvetica, Arial, sans-serif;
+//$headings-font-family:    inherit !default;
+$headings-font-family: $font-family-sans-serif;
+//$font-size-base:14px !default;
+$font-size-base: 16px;
+//$text-color:            $gray-dark !default;
+$text-color: $japaneseindigo;
+//$link-color:            $brand-primary !default;
+$link-color: $japaneseindigo;
+//$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color: $frenchskyblue;
+//** Link hover decoration.
+$link-hover-decoration: none;
+//Borders
+//border-color
+$border-color: $platinum;
+// Navbar
+$navbar-height: 50px !default;
+$navbar-height-desktop: 70px !default;
+//$navbar-margin-bottom:             $line-height-computed !default;
+$navbar-margin-bottom: 0;
+//$navbar-border-radius:             $border-radius-base !default;
+$navbar-border-radius: 0;
+//$navbar-default-color:             #777 !default;
+$navbar-default-color: $japaneseindigo;
+//$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-border: $platinum;
+//$navbar-default-bg:                #f8f8f8 !default;
+$navbar-default-bg: $body-bg;
+//$navbar-default-link-color:                #777 !default;
+$navbar-default-link-color: $link-color;
+//$navbar-default-link-hover-color:          #333 !default;
+$navbar-default-link-hover-color: $link-hover-color;
+//$navbar-default-link-active-color:         #555 !default;
+$navbar-default-link-active-color: $link-color;
+//$navbar-default-toggle-icon-bar-bg:        #888 !default;
+$navbar-default-toggle-icon-bar-bg: $link-color;
+//$navbar-default-toggle-hover-bg:            #ddd !default;
+$navbar-default-toggle-hover-bg: $body-bg;
+$nav-link-padding-desktop: 25px 15px;
+//$nav-link-hover-bg:                         $gray-lighter !default;
+$nav-link-hover-bg: transparent;

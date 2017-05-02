@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>A Pen by LeaSak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmW2amb_-e8LfLuN8o2-wkcqvvaPe-0tw&libraries=places"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body id="home">
+    <!-- Navigation-->
+    <nav class="navbar navbar-default">
+        <div class="container nav-container">
+            <div class="navbar-header">
+                <!--toggle-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!--menu-->
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#map-section">Map</a></li>
+                    <li><a href="#footer-contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- Resume -->
+    <div class="resume-container container">
+        <!--header and bio-image-->
+        <section class="resume-section" id="name">
+            <div class="portrait-section" id="biopic-box">
+            </div>
+            <header id="header-content">
+            </header>
+        </section>
+        <!--skills and contact information-->
+        <section class="resume-section">
+            <div class="profile-section" id="profile">
+                <h3 id="contact-header" class="list-header">Contact</h3>
+                <ul id="topContacts" class="contact">
+                </ul>
+            </div>
+            <div class="skill-section" id="skill-box">
+            </div>
+        </section>
+        <!-- work -->
+        <section class="resume-section" id="work">
+            <div class="left-column">
+                <h2 class="title">Work</h2>
+            </div>
+            <div class="right-column">
+                <div class="work-section" id="workExperience">
+                </div>
+            </div>
+        </section>
+        <!-- projects -->
+        <section class="resume-section" id="projects">
+            <div class="left-column">
+                <h2 class="title">Projects</h2>
+            </div>
+            <div class="right-column" id="project-box">
+                <!--each project gets a new row to nest and group project items-->
+            </div>
+        </section>
+        <!--  education -->
+        <section class="resume-section" id="education">
+            <div class="left-column">
+                <h2 class="title">Education</h2>
+            </div>
+            <div class="right-column">
+                <div class="education-section" id="education-box">
+                </div>
+            </div>
+        </section>
+        <!-- map -->
+        <section class="resume-section" id="map-section">
+            <div class="left-column">
+                <h2 class="title">Map</h2>
+            </div>
+            <div class="right-column" id="mapDiv">
+                <h4 class="article-title">Where I've Lived and Worked</h4>
+            </div>
+        </section>
+    </div>
+    <!-- container end-->
+    <footer class="footer-container container" id="footer-contact">
+        <p>Say hello!</p>
+        <ul class="contact">
+        </ul>
+    </footer>
+    <!--JS-->
+    <script src="js/app.min.js"></script>
+    <script>
+    if (document.getElementsByClassName('contact-item').length === 0) {
+        document.getElementById('contact-header').style.display = 'none';
+        document.getElementById('topContacts').style.display = 'none';
+        document.getElementById('footer-contact').style.display = 'none';
+    }
+    if (document.getElementsByTagName('h1').length === 0) {
+        document.getElementById('name').style.display = 'none';
+    }
+
+    if (document.getElementsByClassName('work-entry').length === 0) {
+        document.getElementById('work').style.display = 'none';
+    }
+
+    if (document.getElementsByClassName('card').length === 0) {
+        document.getElementById('projects').style.display = 'none';
+    }
+
+    if (document.getElementsByClassName('education-entry').length === 0) {
+        document.getElementById('education').style.display = 'none';
+    }
+
+    if (document.getElementById('map') === null) {
+        document.getElementById('map-section').style.display = 'none';
+    }
+    </script>
+    <!-- Add this script to index.html to prevent flickering -->
+    <script>
+    document.body.className += ' fade-out';
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+/*Project*/
+
+.card {
+    padding: 15px 15px 0;
+    border: 5px solid $japaneseindigo;
+    background-color: $japaneseindigo;
+    border-radius: 2px;
+    margin: 10px 0 30px 0;
+    @media (min-width: 550px) {
+        padding: 30px 30px 15px;
+    }
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 30px;
+    }
+}

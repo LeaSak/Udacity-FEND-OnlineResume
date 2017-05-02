@@ -1,0 +1,16 @@
+/*Navbar*/
+
+.navbar-default {
+    border: none;
+}
+
+.navbar-toggle {
+    border: none;
+}
+
+.nav-container {
+    padding: 0 5%;
+    @media (min-width: $screen-sm-min) {
+        padding: 1% 5%;
+    }
+}

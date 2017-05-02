@@ -42,8 +42,8 @@
 
 #mapDiv {
     height: 350px;
-    padding: 10% 15px;
+    padding: 0 15px 10%;
     @media (min-width: $screen-sm-min) {
-        padding: 5% 15px;
+        padding: 0 15px 5%;
     }
 }

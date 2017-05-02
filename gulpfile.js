@@ -38,7 +38,7 @@ gulp.task('buildCSS', function() {
         .pipe(sass({
             outputStyle: 'expanded',
             //where to import files from
-            includePaths: [paths.bowerDir + 'bootstrap-sass/assets/stylesheets/'],
+            includePaths: [paths.bowerDir + '/bootstrap-sass/assets/stylesheets/'],
             precision: 8
         }).on('error', sass.logError))
         .pipe(autoprefixer({

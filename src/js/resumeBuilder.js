@@ -52,8 +52,7 @@ var work = {
             "dates": "07/2016 - Present",
             "location": "Vienna, Austria",
             "description": "Analysing websites and web applications from a user's perspective."
-        },
-            {
+        }, {
             "employer": "I-Center, Stanford University",
             "title": "Cultural Program Associate",
             "dates": "10/2012 - 06/2013",
@@ -99,10 +98,10 @@ var projects = {
         "title": "Build a Portfolio Site",
         "dates": "2017",
         "description": "A responsive website built with HTML, CSS, and Bootstrap.",
-        //create an array of image objects with different sizes.
+        // "images": ["images/portfolio-desktop-600.jpg"],
+        // create an array of image objects with different sizes instead
         "images": [{
-            "src": "images/",
-            "name": "portfolio-desktop",
+            "src": "images/portfolio-desktop",
             "format": "jpg",
             "width": [600, 1200]
         }],
@@ -128,19 +127,20 @@ var projects = {
             //         $(".flex-project-item:last").append(formattedProjectImage);
             //     });
             // }
+
             if (entry.images.length > 0) {
                 //create strings for image srcset and src attributes.
                 entry.images.forEach(function(image) {
                     var srcsetData = [];
                     var imgArray = [];
                     image.width.forEach(function(width) {
-                        var imgUrl = image.src + image.name + '-' + width + "." + image.format;
-                        var srcsetPartial = imgUrl + " " + width + "w";
-                        imgArray.push(imgUrl);
+                        var imgSrc = image.src + '-' + width + "." + image.format;
+                        var srcsetPartial = imgSrc + " " + width + "w";
+                        imgArray.push(imgSrc);
                         srcsetData.push(srcsetPartial);
                     });
-                    console.log(imgArray);
-                    console.log(srcsetData);
+                    //console.log(imgArray);
+                    //console.log(srcsetData);
                     srcsetData = srcsetData.join(", ");
                     srcData = imgArray[0];
                     var formattedProjectImage = HTMLprojectImage.replace(/%data%/, srcData).replace(/%srcsetdata%/, srcsetData);
@@ -175,20 +175,18 @@ var education = {
         "school": "Udacity",
         "dates": "2017 - Present",
         "url": "https://www.udacity.com/"
-    },
-    {
+    }, {
         "title": "Fullstack Web Development",
         "school": "freeCodeCamp",
         "dates": "2016 - Present",
         "url": "https://www.freecodecamp.com/"
-    },
-    {
+    }, {
         "title": "Front-End Web Development",
         "school": "Treehouse",
         "dates": "2016",
         "url": "https://teamtreehouse.com/"
     }],
-    displayEducation: function() {
+    display: function() {
         education.schools.forEach(function(school) {
             var formattedSchoolName = HTMLschoolName.replace("#", school.url).replace("%data%", school.name);
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
@@ -205,10 +203,9 @@ var education = {
                 $(".education-entry:last").append(formattedSchoolMajor);
             });
         });
-    },
-    displayOnlineClasses: function() {
-        $('#education-box').append(HTMLonlineClasses);
 
+        //display online classes
+        $('#education-box').append(HTMLonlineClasses);
         education.onlineCourses.forEach(function(course) {
             $('#education-box').append(HTMLonlineClassStart);
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
@@ -219,6 +216,7 @@ var education = {
             $(".class-list:last").append(formattedOnlineSchool);
             $(".class:last").prepend(formattedOnlineDates);
         });
+
     }
 };
 
@@ -228,5 +226,4 @@ $('#mapDiv').append(googleMap);
 bio.display();
 work.display();
 projects.display();
-education.displayEducation();
-education.displayOnlineClasses();
+education.display();

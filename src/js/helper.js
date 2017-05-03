@@ -36,6 +36,7 @@ var HTMLprojectDates = '<h4 class="project-title"><span class="project-date">%da
 var HTMLprojectTitle = '%data%</h4>';
 var HTMLprojectDescription = '<p class="project-description">%data%</p>';
 var HTMLprojectImageStart = '<div class="flex-project-item"></div>';
+//var HTMLprojectImage = '<img class="img-project" src="%data%" alt="Project Image">';
 var HTMLprojectImage = '<img class="img-project" src="%data%" srcset="%srcsetdata%" alt="Project Image">';
 var HTMLprojectURL = '<a class="project-link" href="%data%">View Project</a>';
 

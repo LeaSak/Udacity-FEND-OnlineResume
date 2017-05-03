@@ -4,9 +4,10 @@ var bio = {
     "name": "Lea-Ann Sakmann",
     "role": "Web Developer",
     "contacts": {
-        "email": ["leaann.sakmann@gmail.com", "leaann.sakmann@gmail.com"],
-        "github": ["@LeaSak", "https://github.com/LeaSak"],
-        "mobile": ["+436607424226", "+436607424226"],
+        "email": "leaann.sakmann@gmail.com",
+        "github": "@LeaSak",
+        "githubUrl": "https://github.com/LeaSak",
+        "mobile": "+436607424226",
         "location": "Vienna, Austria",
     },
     "welcomeMessage": "Welcome.",
@@ -18,9 +19,9 @@ var bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-        var formattedEmailContact = HTMLemail.replace("%data%", bio.contacts.email[0]).replace('%url%', bio.contacts.email[1]);
-        var formattedGithubContact = HTMLgithub.replace("%data%", bio.contacts.github[0]).replace('%url%', bio.contacts.github[1]);
-        var formattedMobileContact = HTMLmobile.replace("%data%", bio.contacts.mobile[0]).replace('%url%', bio.contacts.mobile[1]);
+        var formattedEmailContact = HTMLemail.replace("%data%", bio.contacts.email).replace('%url%', bio.contacts.email);
+        var formattedGithubContact = HTMLgithub.replace("%data%", bio.contacts.github).replace('%url%', bio.contacts.githubUrl);
+        var formattedMobileContact = HTMLmobile.replace("%data%", bio.contacts.mobile).replace('%url%', bio.contacts.mobile);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
         $('#biopic-box').append(formattedBioPic);

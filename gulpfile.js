@@ -54,6 +54,7 @@ gulp.task('buildCSS', function() {
             ],
             cascade: false
         }))
+        .pipe(gulp.dest(bases.src + '/css/'))
         .pipe(cssnano())
         .pipe(maps.write('./'))
         .pipe(gulp.dest(bases.dist + '/css/'))
@@ -72,6 +73,7 @@ gulp.task('buildJS', function(cb) {
             ]),
             maps.init(),
             concat('app.min.js'),
+            gulp.dest(bases.src + 'js/'),
             uglify(),
             maps.write('./'),
             gulp.dest(bases.dist + 'js/')
@@ -109,6 +111,7 @@ gulp.task('copyImages', ['resizeImages'], function() {
     gulp.src([paths.images + '/resized/**/*',
             paths.images + '/portrait/**/*'
         ], { cwd: bases.src })
+        .pipe(gulp.dest(bases.src + paths.images))
         .pipe(gulp.dest(bases.dist + '/images/'));
 });
 

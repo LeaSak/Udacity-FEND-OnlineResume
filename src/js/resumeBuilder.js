@@ -183,6 +183,7 @@ var app = app || {};
             this.render();
         },
         render: function(){
+            var self = this;
             var work = app.controller.getWorkHistory();
                 work.jobs.forEach(function(job) {
                     var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
@@ -191,7 +192,8 @@ var app = app || {};
                     var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
                     var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
 
-                    $('#workExperience').append(HTMLworkStart);
+                    self.$workElem.append(HTMLworkStart);
+                    console.log(self);
                     $(".work-entry:last").append(formattedEmployer + formattedTitle);
                     $(".work-entry:last").append(formattedDates + formattedLocation);
                     $(".work-entry:last").append(formattedDescription);

@@ -1,6 +1,6 @@
 var app = app || {};
 
-(function(){
+(function($){
     'use strict';
 
     /* ======= Model ======= */
@@ -139,11 +139,9 @@ var app = app || {};
             this.$headerElem = $('#header-content');
             this.$contactElem =$('.contact');
             this.$skillsElem = $('#skill-box');
-            this.$skillsList = $('#skills');
             this.render();
         },
         render: function(){
-            var self = this;
             var bio = app.controller.getBio();
             var formattedName = HTMLheaderName.replace("%data%", bio.name);
             var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -168,9 +166,7 @@ var app = app || {};
                 this.$skillsElem.append(HTMLskillsStart);
                 bio.skills.forEach(function(element) {
                     var formattedSkills = HTMLskills.replace("%data%", element);
-                    console.log(self);
-                    //$('#skills').append(formattedSkills);
-                    self.$skillsList.append(formattedSkills);
+                    $('#skills').append(formattedSkills);
                 });
             }
         }
@@ -179,11 +175,9 @@ var app = app || {};
     app.workView = {
         init: function(){
             this.$workElem = $('#workExperience');
-            this.$workEntryElem = $(".work-entry:last");
             this.render();
         },
         render: function(){
-            var self = this;
             var work = app.controller.getWorkHistory();
                 work.jobs.forEach(function(job) {
                     var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
@@ -192,18 +186,18 @@ var app = app || {};
                     var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
                     var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
 
-                    self.$workElem.append(HTMLworkStart);
-                    console.log(self);
+                    this.$workElem.append(HTMLworkStart);
                     $(".work-entry:last").append(formattedEmployer + formattedTitle);
                     $(".work-entry:last").append(formattedDates + formattedLocation);
                     $(".work-entry:last").append(formattedDescription);
-                });
+                }, this);
 
         }
     };
 
     app.projectView = {
         init: function(){
+            this.$projectElem = $('#project-box');
             this.render();
         },
         render: function(){
@@ -214,39 +208,39 @@ var app = app || {};
                 var formattedProjectDescription = HTMLprojectDescription.replace("%data%", entry.description);
                 var formattedProjectUrl = HTMLprojectURL.replace("%data%", entry.url);
 
-                $('#project-box').append(HTMLprojectStart);
+                this.$projectElem.append(HTMLprojectStart);
                 $('.flex-project:last').append(HTMLprojectTextboxStart);
                 $('.flex-project-item-lg:last').append(formattedProjectDates + formattedProjectTitle);
                 $('.flex-project-item-lg:last').append(formattedProjectDescription);
                 $('.flex-project-item-lg:last').append(formattedProjectUrl);
 
-                // if (entry.images.length > 0) {
-                //     //create strings for image srcset and src attributes.
-                //     entry.images.forEach(function(image) {
-                //         var srcsetData = [];
-                //         var imgArray = [];
-                //         image.width.forEach(function(width) {
-                //             var imgSrc = image.src + '-' + width + "." + image.format;
-                //             var srcsetPartial = imgSrc + " " + width + "w";
-                //             imgArray.push(imgSrc);
-                //             srcsetData.push(srcsetPartial);
-                //             console.log(srcsetData, srcData);
-                //         });
-                //         srcsetData = srcsetData.join(", ");
-                //         srcData = imgArray[0];
-                //         var formattedProjectImage = HTMLprojectImage.replace(/%data%/, srcData).replace(/%srcsetdata%/, srcsetData);
-                //         $('.flex-project:last').append(HTMLprojectImageStart);
-                //         $('.flex-project-item:last').append(formattedProjectImage);
-                //     });
-                // }
+                if (entry.images.length > 0) {
+                    //create strings for image srcset and src attributes.
+                    entry.images.forEach(function(image) {
+                        var srcsetData = [];
+                        var imgArray = [];
+                        image.width.forEach(function(width) {
+                            var imgSrc = image.src + '-' + width + "." + image.format;
+                            var srcsetPartial = imgSrc + " " + width + "w";
+                            imgArray.push(imgSrc);
+                            srcsetData.push(srcsetPartial);
+                        });
+                        srcsetData = srcsetData.join(", ");
+                        var srcData = imgArray[0];
+                        var formattedProjectImage = HTMLprojectImage.replace(/%data%/, srcData).replace(/%srcsetdata%/, srcsetData);
+                        $('.flex-project:last').append(HTMLprojectImageStart);
+                        $('.flex-project-item:last').append(formattedProjectImage);
+                    });
+                }
 
-            });
+            }, this);
         }
     };
 
 
     app.educationView = {
         init: function(){
+            this.$educationElem = $('#education-box');
             this.render();
         },
         render: function(){
@@ -257,7 +251,7 @@ var app = app || {};
                 var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
                 var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
 
-                $('#education-box').append(HTMLschoolStart);
+                this.$educationElem.append(HTMLschoolStart);
                 $(".education-entry:last").append(formattedSchoolDegree);
                 $(".education-entry:last").append(formattedSchoolName);
                 $(".education-entry:last").append(formattedSchoolDates + formattedSchoolLocation);
@@ -266,12 +260,12 @@ var app = app || {};
                     var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", subject);
                     $(".education-entry:last").append(formattedSchoolMajor);
                 });
-            });
+            }, this);
 
             //display online classes
-            $('#education-box').append(HTMLonlineClasses);
+            this.$educationElem.append(HTMLonlineClasses);
             education.onlineCourses.forEach(function(course) {
-                $('#education-box').append(HTMLonlineClassStart);
+                this.$educationElem.append(HTMLonlineClassStart);
                 var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
                 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school).replace("#", course.url);
                 var formattedOnlineDates = HTMLonlineDates.replace("%data%", course.dates);
@@ -279,7 +273,7 @@ var app = app || {};
                 $(".class-list:last").append(formattedOnlineTitle);
                 $(".class-list:last").append(formattedOnlineSchool);
                 $(".class:last").prepend(formattedOnlineDates);
-            });
+            }, this);
 
         }
     };
@@ -297,4 +291,4 @@ var app = app || {};
 
 
 
-}());
+}(jQuery));

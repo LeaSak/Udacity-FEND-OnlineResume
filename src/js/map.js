@@ -156,9 +156,15 @@ var mapModelView = {
         this.mapOptions = mapController.getMapOptions();
         this.mapElem = document.querySelector('#map');
         this.render();
+        this.setMapBounds();
     },
     render: function() {
         this.map = new google.maps.Map(this.mapElem, this.mapOptions);
+    },
+    setMapBounds: function() {
+        // Sets the boundaries of the map based on pin locations
+        //TODO: not sure where to put this??
+        window.mapBounds = new google.maps.LatLngBounds();
     }
 };
 
@@ -166,7 +172,6 @@ var mapMarkerView = {
     init: function() {
         this.locations = mapController.setLocations();
         this.pinPoster(this.locations);
-        this.setMapBounds();
     },
     pinPoster: function(location) {
         // creates a Google place search service object. PlacesService does the work of
@@ -221,11 +226,6 @@ var mapMarkerView = {
         mapModelView.map.fitBounds(bounds);
         // center the map
         mapModelView.map.setCenter(bounds.getCenter());
-    },
-    setMapBounds: function() {
-        // Sets the boundaries of the map based on pin locations
-        //TODO: not sure where to put this??
-        window.mapBounds = new google.maps.LatLngBounds();
     }
 };
 
@@ -236,5 +236,5 @@ window.addEventListener('load', mapController.init());
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
     //Make sure the map bounds get updated on page resize
-    map.fitBounds(mapBounds);
+    mapModelView.map.fitBounds(mapBounds);
 });

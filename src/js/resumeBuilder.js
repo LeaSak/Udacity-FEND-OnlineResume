@@ -25,7 +25,6 @@ var app = app || {};
             app.workView.init();
             app.projectView.init();
             app.educationView.init();
-            app.mapView.init();
         },
         getBio: function(){
             return app.model.bio;
@@ -185,15 +184,6 @@ var app = app || {};
                 $(".class:last").prepend(formattedOnlineDates);
             }, this);
 
-        }
-    };
-
-    app.mapView = {
-        init: function(){
-            this.render();
-        },
-        render: function(){
-            $('#mapDiv').append(googleMap);
         }
     };
 

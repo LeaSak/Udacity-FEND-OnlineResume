@@ -61,7 +61,7 @@ gulp.task('buildCSS', function() {
 });
 
 //JS
-gulp.task('buildJS', function(cb) {
+gulp.task('buildJS', ['copyJSON'], function(cb) {
     pump([
             gulp.src([
                 paths.bowerDir + '/jquery/dist/jquery.min.js',
@@ -115,14 +115,21 @@ gulp.task('copyImages', ['resizeImages'], function() {
         .pipe(gulp.dest(bases.dist + '/images/'));
 });
 
+// Copy json file
+gulp.task('copyJSON', function(){
+    return gulp.src(bases.src + "/js/*.json")
+    .pipe(gulp.dest(bases.dist + '/js/'))
+});
+
 // Watch tasks. Rerun the task when a file changes
 gulp.task('watch', function() {
+    gulp.watch(bases.src + "/js/*.json", ['copyJSON'])
     gulp.watch(bases.src + "/js/**/*.js", ['buildJS']);
     gulp.watch(bases.src + "/scss/**/*.scss", ['buildCSS']);
     gulp.watch(bases.src + "/*.html", ['minifyHTML']);
 })
 
-gulp.task('build', ['copyImages', 'buildJS', 'buildCSS', 'minifyHTML'], function(done) {
+gulp.task('build', ['copyImages', 'copyJSON','buildJS', 'buildCSS', 'minifyHTML'], function(done) {
     console.log("Page is built");
     done();
 });

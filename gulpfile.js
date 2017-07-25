@@ -68,6 +68,7 @@ gulp.task('buildJS', ['copyJSON'], function(cb) {
                 paths.bowerDir + '/bootstrap-sass/assets/javascripts/bootstrap.js',
                 bases.src + 'js/helper.js',
                 bases.src + 'js/resumeBuilder.js',
+                bases.src + 'js/map.js',
                 bases.src + 'js/baffle.min.js',
                 bases.src + 'js/app.js'
             ]),

@@ -47,17 +47,11 @@ var bio = {
 
 var work = {
     "jobs": [{
-            "employer": "UserTesting, TryMyUI, Enroll",
+            "employer": "Independent Contractor",
             "title": "Remote Usability Tester",
             "dates": "07/2016 - Present",
             "location": "Vienna, Austria",
             "description": "Analysing websites and web applications from a user's perspective."
-        }, {
-            "employer": "I-Center, Stanford University",
-            "title": "Cultural Program Associate",
-            "dates": "10/2012 - 06/2013",
-            "location": "Stanford, USA",
-            "description": "Developed and gave art and design workshops to international students on a voluntary basis."
         },
 
         {
@@ -70,7 +64,7 @@ var work = {
 
         {
             "employer": "Independent Contractor",
-            "title": "Translator",
+            "title": "Language Specialist",
             "dates": "05/2006 - 08/2012",
             "location": "Heidelberg, Germany",
             "description": "Translated and edited web and printed content for arts organizations and artists."
@@ -165,7 +159,7 @@ var education = {
     }, {
         "name": "University of New South Wales",
         "location": "Sydney, Australia",
-        "degree": "Bachelor of Fine Art",
+        "degree": "Bachelor of Fine Arts",
         "majors": ["Painting"],
         "dates": "2000 - 2003",
         "url": "https://www.artdesign.unsw.edu.au/"
@@ -173,7 +167,7 @@ var education = {
     "onlineCourses": [{
         "title": "Front-End Web Development Nanodegree",
         "school": "Udacity",
-        "dates": "2017 - Present",
+        "dates": "2017",
         "url": "https://www.udacity.com/"
     }, {
         "title": "Fullstack Web Development",

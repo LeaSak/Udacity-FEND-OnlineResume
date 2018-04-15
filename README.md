@@ -2,11 +2,15 @@
 
 This is project four in Udacity's Front-End Web Development Nanodegree. The aim of the project was to develop an online resume based on this [project](https://github.com/udacity/frontend-nanodegree-resume/blob/master/README.md).
 
+<p align="center">
+  <img width="auto" height="auto" src="https://github.com/LeaSak/Udacity-FEND-OnlineResume/blob/master/screenshot-resume.png?raw=true" alt="Online Resume Screenshot">
+</p>
+
 ## Getting started
 
 First go to the master branch of the project and get a copy of the repository by either downloading the project files to your computer or via the command line.
 
-` git clone https://github.com/LeaSak/Udacity-FEND-OnlineResume.git`
+`git clone https://github.com/LeaSak/Udacity-FEND-OnlineResume.git`
 
 If you just want to view the built website, go to the project's **dist** directory, and open **index.html** in your browser.
 
@@ -22,7 +26,7 @@ To build the website, you need to first setup your development environment. If y
 
 #### Step 2: Install Gulp Dependencies
 Make sure you're in your project directory. Now we'll install the project's development dependencies.
-- To install **Bootstrap**, run ` $ bower install`. You should see bootstrap-sass and Jquery folders appear in your directory.
+- To install **Bootstrap**, run `$ bower install`. You should see bootstrap-sass and Jquery folders appear in your directory.
 - To install the **Gulp** dependencies, run `npm install`. You should now find these plugins in your node modules folder.
 
 *Note*: The gulp plugin **gulp-responsive** uses the library **Sharp**. You need to have **Sharp** installed for this plugin to work. See [this link](http://sharp.dimens.io/en/stable/install/) for instructions.
